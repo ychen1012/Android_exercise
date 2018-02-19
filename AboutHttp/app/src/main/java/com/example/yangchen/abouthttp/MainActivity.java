@@ -30,30 +30,6 @@ public class MainActivity extends Activity {
     }
 public void doPost(View view){
 
-    FormEncodingBuilder requestBodyBuilder=new FormEncodingBuilder();
-    RequestBody requestBody=requestBodyBuilder.add("name","yyyy").add("pwd","1234").build();
-    Request.Builder builder=new Request.Builder();
-  Request request=  builder.url("http://api.nohttp.net/upload").post(requestBody).build();
-    Call call=okHttpClient.newCall(request);
-    //执行 call；
-    call.enqueue(new Callback() {
-        @Override
-        public void onFailure(Request request, IOException e) {
-
-        }
-
-        @Override
-        public void onResponse(Response response) throws IOException {
-            final String res =response.body().string();
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    tv_shoew.setText(res);
-                }
-            });
-
-        }
-    });
 
 
 }
